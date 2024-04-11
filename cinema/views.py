@@ -26,7 +26,7 @@ class GenreList(APIView):
 
 class GenreDetail(APIView):
     def get_object(self, pk: int) -> Genre:
-        return  get_object_or_404(Genre, pk=pk)
+        return get_object_or_404(Genre, pk=pk)
 
     def get(self, request, pk: int) -> Response:
         serializer = GenreSerializer(self.get_object(pk=pk), data=request.data)
